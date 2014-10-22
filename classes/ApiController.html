@@ -138,10 +138,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-714648379"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-958742090"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-714648379" class="accordion-body collapse in">
+            <div id="namespace-958742090" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -1165,8 +1165,8 @@ If model not found by id then send response with 404 error code and terminate ap
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$newIfNull</td>
-                                <td><p>create new model if $id is null.
-If $id parameter is not set then return empty model</p></td>
+                                <td><p>create new model in $id is null.
+If $id is not set then return empty model</p></td>
                             </tr>
                                             </table>
                 
@@ -1318,34 +1318,20 @@ Only the rules applicable to the current scenario will be executed.</p>
                 <h3 class="public ">getRelations()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getRelations() : array</pre>
-                <p><em>Function returns relations rules for API entity.</em></p>
-                <p>Example:</p>
-<pre>
-return array(
-  'comments'=>array(
-     'columnName'=>'usreComments',       //string name of array key with relation data
-     'return'=>'array',                  //'object'|'array' return CActiveRecord object or array
-     'relationName'=>'comments',         //string name of relation in model
-     'keyField'=>'id',                   //string he name of the key field. This is a field that uniquely identifies a data record.
-                                         //Data in response will be indexed by this key value. If it's not set data will be indexed in order.
-     'safeAttributes'=>'content, date'   //string comma separated list of relation attributes which will be represented in response.
-   ),
-);
-</pre>
+                <p><em>Function returns relations rules for API entity</em></p>
+                
 
                 
                 
                                     <h4>Returns</h4>
                     array
-                                            &mdash; <p>array of relation configs</p>
+                                            &mdash; <p>array of relations</p>
                                                 </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href=""><span class="namespace-wrapper"></span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr>
@@ -2269,7 +2255,7 @@ If <code>$this->sendToEndUser</code> is false, then result will be returned as a
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 22nd, 2014 at 16:51.
+                    on October 22nd, 2014 at 18:05.
                 </section>
             </section>
         </section>

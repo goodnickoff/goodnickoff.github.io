@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">20</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-714648379"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-714648379" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/ApiTestCase.html">ApiTestCase</a></li>
+                                                    <li class="class"><a href="../classes/ApiController.html">ApiController</a></li>
+                                                    <li class="class"><a href="../classes/ApiRelationProvider.html">ApiRelationProvider</a></li>
+                                                    <li class="class"><a href="../classes/Controller.html">Controller</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>ApiController</h1>
+                    <p><em>This is the base class for all API controller classes.</em></p>
+                    <p>Each application REST API controller class extends this class for inheriting
+common for API controller methods and properties.</p>
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Controller.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getView" class="">getView()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getList" class="">getList()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_create" class="">create()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_update" class="">update()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_delete" class="">delete()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getModel" class="">getModel()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getModelsForAffect" class="">getModelsForAffect()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_validate" class="">validate()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getModelErrors" class="">getModelErrors()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getRelations" class="">getRelations()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getParam" class="">getParam()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getAffectedModels" class="">getAffectedModels()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getBaseCriteria" class="">getBaseCriteria()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_setBaseCriteria" class="">setBaseCriteria()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getMethod" class="">getMethod()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_setMethod" class="">setMethod()</a><br />
+                                                                    <a href="../classes/Controller.html#method_getJson" class="">getJson()</a><br />
+                                                                    <a href="../classes/Controller.html#method_sendJson" class="">sendJson()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/ApiController.html#property_idParamName" class="">$idParamName</a><br />
+                                                                    <a href="../classes/ApiController.html#property_data" class="">$data</a><br />
+                                                                    <a href="../classes/ApiController.html#property_priorityData" class="">$priorityData</a><br />
+                                                                    <a href="../classes/ApiController.html#property_model" class="">$model</a><br />
+                                                                    <a href="../classes/Controller.html#property_statusCode" class="">$statusCode</a><br />
+                                                                    <a href="../classes/ApiController.html#property_sendToEndUser" class="">$sendToEndUser</a><br />
+                                                                    <a href="../classes/ApiController.html#property_contentRange" class="">$contentRange</a><br />
+                                                                    <a href="../classes/ApiController.html#property_criteria" class="">$criteria</a><br />
+                                                                    <a href="../classes/ApiController.html#property_criteriaParams" class="">$criteriaParams</a><br />
+                                                                    <a href="../classes/ApiController.html#property_notFoundErrorResponse" class="">$notFoundErrorResponse</a><br />
+                                                                    <a href="../classes/ApiController.html#property_tableAliasQuotes" class="">$tableAliasQuotes</a><br />
+                                                                    <a href="../classes/Controller.html#property_layout" class="">$layout</a><br />
+                                                                    <a href="../classes/Controller.html#property_breadcrumbs" class="">$breadcrumbs</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/ApiController.html#method_getContentRangeHeader" class="">getContentRangeHeader()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getFinalCriteriaParams" class="">getFinalCriteriaParams()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_isCollection" class="">isCollection()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_processFilter" class="">processFilter()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getFilterCriteria" class="">getFilterCriteria()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getSearchCriteria" class="">getSearchCriteria()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_parseFilterObject" class="">parseFilterObject()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_checkModel" class="">checkModel()</a><br />
+                                                                    <a href="../classes/ApiController.html#method_getRecordId" class="">getRecordId()</a><br />
+                                                                    <a href="../classes/Controller.html#method_accessDenied" class="">accessDenied()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/ApiController.html#method_returnResult" class="">returnResult()</a><br />
+                                                                    <a href="../classes/Controller.html#method__getStatusCodeMessage" class="">_getStatusCodeMessage()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/ApiController.html#property__affectedModels" class="">$_affectedModels</a><br />
+                                                                    <a href="../classes/ApiController.html#property__modelsForAffect" class="">$_modelsForAffect</a><br />
+                                                                    <a href="../classes/ApiController.html#property__baseCriteria" class="">$_baseCriteria</a><br />
+                                                                    <a href="../classes/ApiController.html#property__modelErrors" class="">$_modelErrors</a><br />
+                                                                    <a href="../classes/ApiController.html#property__method" class="">$_method</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/ApiController.php.html"><div class="path-wrapper">ApiController.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\api</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                        <div class="namespace-wrapper">\CController</div>
+                                                                    
+                                        <div class="namespace-wrapper"><a href="../classes/Controller.html">\Controller</a></div>
+                                                                                                    <div class="namespace-wrapper">\ApiController</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Oleg Gutnikov <a href="mailto:goodnickoff@gmail.com">goodnickoff@gmail.com</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                todo
+                            </th>
+                            <td>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_idParamName" name="property_idParamName" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$idParamName</h3>
+                <pre class="signature">$idParamName</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_data" name="property_data" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$data</h3>
+                <pre class="signature">$data : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; params from php://input.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_priorityData" name="property_priorityData" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$priorityData</h3>
+                <pre class="signature">$priorityData : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; priority model data which will override data from input.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_model" name="property_model" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$model</h3>
+                <pre class="signature">$model : \CActiveRecord</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \CActiveRecord
+                &mdash; controller model.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_statusCode" name="property_statusCode" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$statusCode</h3>
+                <pre class="signature">$statusCode</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_sendToEndUser" name="property_sendToEndUser" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$sendToEndUser</h3>
+                <pre class="signature">$sendToEndUser : boolean</pre>
+                <p><em>Whether the response should be sent to the end user or should be returned as an array.</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_contentRange" name="property_contentRange" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$contentRange</h3>
+                <pre class="signature">$contentRange : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; contains information about the range of selected data.
+&lt;ul&gt;
+&lt;li&gt;
+total - Number of records found, excluding the $limit
+&lt;/li&gt;
+&lt;li&gt;
+start - number of first selected record. Note start is 0 based, so starting at 5 means the 6th item.
+&lt;/li&gt;
+&lt;li&gt;
+end - number of last selected record. Note start is 0 based, so starting at 5 means the 6th item.
+&lt;/li&gt;
+&lt;/ul&gt;                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_criteria" name="property_criteria" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$criteria</h3>
+                <pre class="signature">$criteria : \CDbCriteria</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \CDbCriteria
+                &mdash; criteria for data selection                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_criteriaParams" name="property_criteriaParams" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$criteriaParams</h3>
+                <pre class="signature">$criteriaParams : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; default criteria params                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_notFoundErrorResponse" name="property_notFoundErrorResponse" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$notFoundErrorResponse</h3>
+                <pre class="signature">$notFoundErrorResponse : array</pre>
+                <p><em>Response to the user when no record found.</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_tableAliasQuotes" name="property_tableAliasQuotes" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$tableAliasQuotes</h3>
+                <pre class="signature">$tableAliasQuotes : boolean</pre>
+                <p><em>Whether to quote the alias name</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_layout" name="property_layout" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$layout</h3>
+                <pre class="signature">$layout : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the default layout for the controller view. Defaults to &#039;//layouts/column1&#039;,
+meaning using a single column layout. See &#039;protected/views/layouts/column1.php&#039;.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_breadcrumbs" name="property_breadcrumbs" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$breadcrumbs</h3>
+                <pre class="signature">$breadcrumbs</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__affectedModels" name="property__affectedModels" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_affectedModels</h3>
+                <pre class="signature">$_affectedModels : \CActiveRecord[]</pre>
+                <p><em>Array of models which was affected during last operation (create, update or delete)</em></p>
+                
+
+                                <h4>Type</h4>
+                \CActiveRecord[]
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__modelsForAffect" name="property__modelsForAffect" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_modelsForAffect</h3>
+                <pre class="signature">$_modelsForAffect</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__baseCriteria" name="property__baseCriteria" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_baseCriteria</h3>
+                <pre class="signature">$_baseCriteria : \CDbCriteria</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \CDbCriteria
+                &mdash; Precedence criteria.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__modelErrors" name="property__modelErrors" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_modelErrors</h3>
+                <pre class="signature">$_modelErrors : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; model errors                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__method" name="property__method" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_method</h3>
+                <pre class="signature">$_method : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; request type, such as GET, POST, PUT, DELETE.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct( <span class="argument">$id</span>,  <span class="argument">$module</span>)</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$id</td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$module</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getView" name="method_getView" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getView()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getView(boolean <span class="argument">$sendToEndUser</span>, integer <span class="argument">$recordId</span>) : array</pre>
+                <p><em>Function send response with record attributes or 404 error if no record found.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$recordId</td>
+                                <td><p>priority record id.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>result. Null if the result sended to end user.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getList" name="method_getList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getList(boolean <span class="argument">$sendToEndUser</span>) : array</pre>
+                <p><em>Function send response with list of record attributes or empty array if no record found.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>result. Null if the result sended to end user.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_create" name="method_create" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">create()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">create(boolean <span class="argument">$sendToEndUser</span>) : array</pre>
+                <p><em>Function crates new record or collection of records.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>with new record attributes. Null if the result sended to end user.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_update" name="method_update" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">update()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">update(boolean <span class="argument">$sendToEndUser</span>, int <span class="argument">$id</span>) : array</pre>
+                <p><em>Function updates existing record or collection of records.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$id</td>
+                                <td><p>record id.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>with updted record attributes. Null if the result sended to end user.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_delete" name="method_delete" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">delete()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">delete(boolean <span class="argument">$sendToEndUser</span>) : array</pre>
+                <p><em>Function deletes record. If $id is null then delete all records.</em></p>
+                <p>Deleted records can be filtered by 'filter' and 'search' params.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>result. Null if the result sended to end user.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getModel" name="method_getModel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getModel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getModel(\CActiveRecord <span class="argument">$model</span>, int <span class="argument">$id</span>, boolean <span class="argument">$newIfNull</span>) : \CActiveRecord</pre>
+                <p><em>Function returns CActiveRecord model.</em></p>
+                <p>If param $id is not passed than return new model.
+If model not found by id then send response with 404 error code and terminate app if $this->sendToEndUser is true.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\CActiveRecord</td>
+                                <td>$model</td>
+                                <td><p>Model class instance</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$id</td>
+                                <td><p>id attribute for which you want to find a record.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$newIfNull</td>
+                                <td><p>create new model if $id is null.
+If $id parameter is not set then return empty model</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \CActiveRecord
+                                            &mdash; <p>model</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getModelsForAffect" name="method_getModelsForAffect" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getModelsForAffect()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getModelsForAffect(boolean <span class="argument">$refresh</span>)</pre>
+                <p><em>Function returns array of models which will be affected (update or delete)
+or array of new models on create request</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$refresh</td>
+                                <td><p>find models or return from cache.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validate" name="method_validate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">validate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validate(boolean <span class="argument">$sendToEndUser</span>) : boolean</pre>
+                <p><em>Performs the validation.</em></p>
+                <p>This method executes the validation rules as declared in model rules.
+Only the rules applicable to the current scenario will be executed.</p>
+<p>Errors found during the validation can be retrieved via {@link getModelErrors}.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$sendToEndUser</td>
+                                <td><p>Whether the response should be sent to the end user or should be returned as an array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>whether the validation is successful without any error.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getModelErrors" name="method_getModelErrors" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getModelErrors()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getModelErrors() : array</pre>
+                <p><em>Returns the errors for all models.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>errors for all models. Empty array is returned if no error.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRelations" name="method_getRelations" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRelations()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRelations() : array</pre>
+                <p><em>Function returns relations rules for API entity.</em></p>
+                <p>Example:</p>
+<pre>
+return array(
+  'comments'=>array(
+     'columnName'=>'usreComments',       //string name of array key with relation data
+     'return'=>'array',                  //'object'|'array' return CActiveRecord object or array
+     'relationName'=>'comments',         //string name of relation in model
+     'keyField'=>'id',                   //string he name of the key field. This is a field that uniquely identifies a data record.
+                                         //Data in response will be indexed by this key value. If it's not set data will be indexed in order.
+     'safeAttributes'=>'content, date'   //string comma separated list of relation attributes which will be represented in response.
+   ),
+);
+</pre>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of relation configs</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper"></span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getParam" name="method_getParam" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getParam()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getParam(string <span class="argument">$name</span>, mixed <span class="argument">$defaultValue</span>) : mixed</pre>
+                <p><em>Returns the named GET or POST parameter value.</em></p>
+                <p>If the GET or POST parameter does not exist, the second parameter to this method will be returned.
+If both GET and POST contains such a named parameter, the GET parameter takes precedence.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name</td>
+                                <td><p>the GET parameter name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$defaultValue</td>
+                                <td><p>the default parameter value if the GET parameter does not exist.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>the parameter value</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAffectedModels" name="method_getAffectedModels" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAffectedModels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAffectedModels() : \CActiveRecord[]</pre>
+                <p><em>Function returns array of model which was affected during last operation (create or update).</em></p>
+                <p>If no models was affected function returns empty array.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    \CActiveRecord[]
+                                            &mdash; <p>Affexted models</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBaseCriteria" name="method_getBaseCriteria" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBaseCriteria()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBaseCriteria(boolean <span class="argument">$refresh</span>) : \CDbCriteria</pre>
+                <p><em>Function returns base criteria wich will be used for searching models.</em></p>
+                <p>Parameters of this criteria will be used for records when searching, updating and deleting data.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$refresh</td>
+                                <td><p>whether to reload cached _baseCriteria prop.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \CDbCriteria
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBaseCriteria" name="method_setBaseCriteria" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBaseCriteria()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBaseCriteria(\CDbCriteria <span class="argument">$criteria</span>) : \CDbCriteria</pre>
+                <p><em>Function sets base criteria.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\CDbCriteria</td>
+                                <td>$criteria</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \CDbCriteria
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper"></span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMethod" name="method_getMethod" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMethod()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMethod() : string</pre>
+                <p><em>Function returns the request type, such as GET, POST, HEAD, PUT, DELETE.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMethod" name="method_setMethod" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMethod()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMethod(string <span class="argument">$type</span>) : string</pre>
+                <p><em>Function sets the request type, such as GET, POST, HEAD, PUT, DELETE.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type</td>
+                                <td><p>Request type</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getJson" name="method_getJson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getJson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getJson() : array</pre>
+                <p><em>Function parse headers and fetch params from php://input</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>HTTP params</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sendJson" name="method_sendJson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">sendJson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sendJson(array <span class="argument">$data</span>, int <span class="argument">$status</span>, array <span class="argument">$headers</span>)</pre>
+                <p><em>Function convert $data array to json string, sends it to client and terminates the application.</em></p>
+                <p>Usage example:</p>
+<pre>
+  $this->sendJson(
+      array(...),
+      200,
+      array(
+          "Content-Range: items $offset-$limit/$total",
+          ...
+      )
+  );
+</pre>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data</td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$status</td>
+                                <td><p>code.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$headers</td>
+                                <td><p>http headers array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getContentRangeHeader" name="method_getContentRangeHeader" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getContentRangeHeader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getContentRangeHeader() : string</pre>
+                <p><em>Function return Content-Range header value</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Content-Range</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFinalCriteriaParams" name="method_getFinalCriteriaParams" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getFinalCriteriaParams()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFinalCriteriaParams() : array</pre>
+                <p><em>Functions returns array of CDbCriteria params.</em></p>
+                <p>The array contains the values ​​of a $this->_criteriaParams array that can be overwritten with the values ​​from $_GET parameters.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>CDbCriteria params.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isCollection" name="method_isCollection" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">isCollection()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isCollection( <span class="argument">$data</span>) : boolean</pre>
+                <p><em>Function checks collection array.</em></p>
+                <p>Collection must be an <b>indexed</b> array containing arrays with a set of attribute names and their values.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$data</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>if $this->data is collection of models attributes</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_processFilter" name="method_processFilter" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">processFilter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">processFilter(string <span class="argument">$data</span>) : array</pre>
+                <p><em>Function processes filter data from request to array.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$data</td>
+                                <td><p>json decoded data</p>
+<pre>
+[{"name":"admin","description":"administrator"},{"name":"guest","description":"Гость"}]
+</pre></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <pre>
+array(
+    array{
+      'name' => 'admin',
+      'description' => 'administrator'
+    ),
+    array(
+      'name' => 'guest',
+      'description' => 'Гость'
+    )
+)
+</pre>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFilterCriteria" name="method_getFilterCriteria" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getFilterCriteria()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFilterCriteria(boolean <span class="argument">$partialMatch</span>, array <span class="argument">$filterData</span>) : \CDbCriteria</pre>
+                <p><em>Function creates criteria from filter data in request GET paramseters</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$partialMatch</td>
+                                <td><p>Whether the value should consider partial text match (using LIKE and NOT LIKE operators).
+Defaults to false, meaning exact comparison.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$filterData</td>
+                                <td><p>Example:</p>
+<pre>
+array(
+      array(
+        'name' => 'admin',
+        'description' => 'administrator'
+      ),
+      array(
+        'name' => 'guest',
+        'description' => 'Гость'
+      )
+  )
+</pre>
+<p>From this array will be created follow condition:
+If $partialMatch = false</p>
+<pre>
+string '((name='admin') AND (description='administrator')) OR ((name='guest') AND (description='Гость'))'
+</pre>
+<p>If $partialMatch = true</p>
+<pre>
+string '((name LIKE 'admin') AND (description LIKE 'administrator')) OR ((name LIKE 'guest') AND (description LIKE 'Гость'))'
+</pre></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \CDbCriteria
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSearchCriteria" name="method_getSearchCriteria" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getSearchCriteria()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSearchCriteria() : \CDbCriteria</pre>
+                <p><em>Function creates criteria from search data in request GET paramseters</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \CDbCriteria
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_parseFilterObject" name="method_parseFilterObject" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">parseFilterObject()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">parseFilterObject(object <span class="argument">$filter</span>) : array</pre>
+                <p><em>Function convert json decoded object to array</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$filter</td>
+                                <td><p>json decoded object</p>
+<pre>
+object(stdClass)
+    public 'name' => string 'guest'
+    public 'description' => string 'Гость'
+</pre></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <pre>
+array(
+   'name' => 'guest',
+   'description' => 'Гость'
+)
+</pre>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkModel" name="method_checkModel" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">checkModel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkModel()</pre>
+                <p><em>Function checks if $this-&gt;model property is not null and its instance of ActiveRecord class</em></p>
+                
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRecordId" name="method_getRecordId" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getRecordId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRecordId(integer <span class="argument">$id</span>)</pre>
+                <p><em>Function returns $id record attribure.</em></p>
+                <p>If $id parameter is passed and it is nuneric then it will be returned.
+Otherwise $id will be obtained from $_GET['id'].</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_accessDenied" name="method_accessDenied" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">accessDenied()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">accessDenied( <span class="argument">$json</span>) : null</pre>
+                <p><em>Function displays &quot;access denied&quot; message to end users. And terminate the application</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$json</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_returnResult" name="method_returnResult" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">returnResult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">returnResult(array <span class="argument">$result</span>, array <span class="argument">$headers</span>) : array</pre>
+                <p><em>Function returns result of operation depends on $this-&gt;sendToEndUser property.</em></p>
+                <p>If <code>$this->sendToEndUser</code> is true, then result will be sended to end user and application will be terminated.
+If <code>$this->sendToEndUser</code> is false, then result will be returned as array.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$result</td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$headers</td>
+                                <td><p>http headers array.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__getStatusCodeMessage" name="method__getStatusCodeMessage" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">_getStatusCodeMessage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_getStatusCodeMessage(int <span class="argument">$status</span>) : string</pre>
+                <p><em>Funcion return HTTP status code message</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int</td>
+                                <td>$status</td>
+                                <td><p>status code</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>code message</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Controller.html"><div class="path-wrapper">\Controller</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ApiController.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/ApiController.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on October 22nd, 2014 at 16:51.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

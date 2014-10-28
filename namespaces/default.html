@@ -65,12 +65,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">20</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">30</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                         </ul>
@@ -90,18 +90,21 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1586732721"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1442425100"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1586732721" class="accordion-body collapse in">
+            <div id="namespace-1442425100" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/ApiTestCase.html">ApiTestCase</a></li>
+                                                                                                    <li class="class"><a href="../classes/ApiBaseController.html">ApiBaseController</a></li>
                                                     <li class="class"><a href="../classes/ApiController.html">ApiController</a></li>
+                                                    <li class="class"><a href="../classes/ApiJsonResponseProvider.html">ApiJsonResponseProvider</a></li>
                                                     <li class="class"><a href="../classes/ApiRelationProvider.html">ApiRelationProvider</a></li>
-                                                    <li class="class"><a href="../classes/Controller.html">Controller</a></li>
+                                                    <li class="class"><a href="../classes/ApiResponseProvider.html">ApiResponseProvider</a></li>
+                                                    <li class="class"><a href="../classes/ApiTestCase.html">ApiTestCase</a></li>
+                                                    <li class="class"><a href="../classes/ApiXmlResponseProvider.html">ApiXmlResponseProvider</a></li>
                                             </ul>
                 </div>
             </div>
@@ -125,20 +128,32 @@
                                         <h2>Classes</h2>
                     <table class="table table-hover">
                                             <tr>
-                            <td><a href="../classes/ApiTestCase.html">ApiTestCase</a></td>
-                            <td><em>ApiTestCase is the base class for testing all RESTful API controller methods.</em></td>
+                            <td><a href="../classes/ApiBaseController.html">ApiBaseController</a></td>
+                            <td><em>This is the base API controller class.</em></td>
                         </tr>
                                             <tr>
                             <td><a href="../classes/ApiController.html">ApiController</a></td>
                             <td><em>This is the base class for all API controller classes.</em></td>
                         </tr>
                                             <tr>
+                            <td><a href="../classes/ApiJsonResponseProvider.html">ApiJsonResponseProvider</a></td>
+                            <td><em>ApiJsonResponseProvider implements a response provider based on ApiResponseProvider</em></td>
+                        </tr>
+                                            <tr>
                             <td><a href="../classes/ApiRelationProvider.html">ApiRelationProvider</a></td>
                             <td><em>ApiRelationProvider</em></td>
                         </tr>
                                             <tr>
-                            <td><a href="../classes/Controller.html">Controller</a></td>
-                            <td><em>Controller is the customized base controller class.</em></td>
+                            <td><a href="../classes/ApiResponseProvider.html">ApiResponseProvider</a></td>
+                            <td><em>ApiResponseProvider is a base class for sendig information in proper format to end user.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/ApiTestCase.html">ApiTestCase</a></td>
+                            <td><em>ApiTestCase is the base class for testing all RESTful API controller methods.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/ApiXmlResponseProvider.html">ApiXmlResponseProvider</a></td>
+                            <td><em>ApiXmlResponseProvider implements a response provider based on ApiResponseProvider</em></td>
                         </tr>
                                         </table>
                                     </div>
@@ -194,7 +209,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 22nd, 2014 at 18:05.
+                    on October 28th, 2014 at 19:01.
                 </section>
             </section>
         </section>

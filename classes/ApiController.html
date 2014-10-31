@@ -138,10 +138,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1744056668"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1335314021"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1744056668" class="accordion-body collapse in">
+            <div id="namespace-1335314021" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -1228,7 +1228,7 @@ If $id is not set then return empty model</p></td>
             <article class="method">
                 <h3 class="public ">getModelsForAffect()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getModelsForAffect(boolean <span class="argument">$refresh</span>)</pre>
+                <pre class="signature" style="margin-right: 54px;">getModelsForAffect(boolean <span class="argument">$refresh</span>, boolean <span class="argument">$fillModels</span>) : array</pre>
                 <p><em>Function returns array of models which will be affected (update or delete)
 or array of new models on create request</em></p>
                 
@@ -1238,12 +1238,20 @@ or array of new models on create request</em></p>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$refresh</td>
-                                <td><p>find models or return from cache.</p></td>
+                                <td><p>Find models or return from cache.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$fillModels</td>
+                                <td><p>Whether to fill the model attributes.</p></td>
                             </tr>
                                             </table>
                 
                 
-                            </article>
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Models that have to be affected.</p>
+                                                </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -2364,7 +2372,7 @@ If <code>$this->sendToEndUser</code> is false, then result will be returned as a
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 28th, 2014 at 19:01.
+                    on October 31st, 2014 at 16:51.
                 </section>
             </section>
         </section>
